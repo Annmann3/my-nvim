@@ -1,0 +1,11 @@
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['md', 'markdown']
+
+[[plugins]]
+repo = 'dense-analysis/ale'
+on_ft = ['rb', 'ruby']
+
+[[plugin]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']

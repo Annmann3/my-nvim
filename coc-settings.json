@@ -1,0 +1,9 @@
+{
+  "eslint.autoFixOnSave": true,
+  "eslint.probe": [
+    "javascript",
+    "html",
+    "vue",
+    "markdown"
+  ]
+}
