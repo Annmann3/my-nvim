@@ -1,5 +1,11 @@
 let mapleader = "\<Space>"
+
+" 行の色を変更
+autocmd ColorScheme * highlight LineNr guifg=#9e9e9e
+" 透かすために背景色を変更
+autocmd ColorScheme * highlight Normal guibg=NONE
 colorscheme hybrid
+
 
 " 行番号を表示
 set number
@@ -11,15 +17,27 @@ set smartindent
 set shiftwidth=2
 " Tabキーで挿入するスペースの数(数値)
 set softtabstop=2
+" Escの2回押しでハイライト消去
+nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 " 補完ウィンドウ
 set pumblend=30
+" TRUECOLOR有効
 set termguicolors
+" カーソルラインを表示
+set cursorline
+" yankでクリップボードにコピー
+set clipboard=unnamed
+" 画面の更新頻度をあげる
+set updatetime=100
+
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+
 
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
-set runtimepath+=/Users/ak_pc/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 let s:dein_dir = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
@@ -54,28 +72,15 @@ let mapleader = "\<Space>"
 colorscheme hybrid
 
 
- call plug#begin()
- Plug 'jiangmiao/auto-pairs'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
- Plug 'posva/vim-vue'
- Plug 'yuezk/vim-js'
- Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
- Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
- Plug 'kristijanhusak/defx-git'
- Plug 'kristijanhusak/defx-icons'
- Plug 'ryanoasis/vim-devicons'
- 
- Plug 'dense-analysis/ale'
- Plug 'tpope/vim-endwise'
- Plug 'tpope/vim-rails'
- call plug#end()
- 
- " 定義元にジャンプ
- nmap gd (coc-definition)
- 
- 
- " Escでノーマルに戻るとき、日本語入力を切る
- inoremap <silent> <ESC> <Esc>:call system('im-select com.google.inputmethod.Japanese.Roman')<CR>
- 
- 
- 
+
+"シンタックスハイライト有効
+syntax on
+filetype plugin indent on
+filetype indent on
+
+
+inoremap <silent> <ESC> <ESC>:call system('im-select com.apple.keylayout.US')<CR>
+"" 画面分割
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+

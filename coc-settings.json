@@ -1,9 +1,17 @@
 {
+  "suggest.triggerAfterInsertEnter": true,
   "eslint.autoFixOnSave": true,
   "eslint.probe": [
     "javascript",
+    "typescript",
     "html",
     "vue",
-    "markdown"
-  ]
+    "markdown",
+    "json"
+  ],
+  "tailwindCSS.enable": true,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "vue"
+  },
+  "vetur.validation.templateProps": true
 }

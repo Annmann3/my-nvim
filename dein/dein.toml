@@ -1,4 +1,13 @@
 [[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'kristijanhusak/defx-git'
+
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+
+[[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
@@ -18,15 +27,56 @@ source ~/.config/nvim/plugins/denite.rc.vim
 repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
-repo = "neoclide/coc.nvim"
-merge = 0
-rev = "release"
+repo = 'lukas-reineke/indent-blankline.nvim'
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+merged = 0
+rev = 'release'
 hook_add = """
 source ~/.config/nvim/plugins/coc.rc.vim
 """
 
 [[plugins]]
-repo = 'kristijanhusak/defx-git'
+repo = 'junegunn/fzf'
+merged = 0
+build = """
+./install --all
+"""
 
 [[plugins]]
-repo = 'kristijanhusak/defx0icons'
+repo = 'junegunn/fzf.vim'
+hook_add = """
+source ~/.config/nvim/plugins/fzf.rc.vim
+"""
+
+[[plugins]]
+repo = 'antoinemadec/coc-fzf'
+rev = 'release'
+
+[[plugins]]
+repo = 'github/copilot.vim'
+rev = 'release'
+hook_add = """
+source ~/.config/nvim/plugins/copilot.rc.vim
+"""
+
+[[plugins]]
+repo = 'sindrets/diffview.nvim'
+
+# chatgpt3 requires
+[[plugin]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+
+[[plugins]]
+repo = 'MunifTanjim/nui.nvim'
+# chatgpt3 requires end
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = """
+source ~/.config/nvim/plugins/gitgutter.rc.vim
+"""

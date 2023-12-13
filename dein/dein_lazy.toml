@@ -3,9 +3,47 @@ repo = 'rcmdnk/vim-markdown'
 on_ft = ['md', 'markdown']
 
 [[plugins]]
+repo = 'tpope/vim-endwise'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = ['ruby']
+
+[[plugins]]
 repo = 'dense-analysis/ale'
-on_ft = ['rb', 'ruby']
+on_ft = ['ruby']
+hook_add =  """
+source ~/.config/nvim/plugins/ale.rc.vim
+"""
 
 [[plugin]]
-repo = 'posva/vim-vue'
+repo = 'leafOfTree/vim-vue-plugin'
 on_ft = ['vue']
+hook_add = """
+source ~/.config/nvim/plugins/vue.rc.vim
+"""
+
+[[plugins]]
+repo = 'yuezk/vim-js'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'slim-template/vim-slim'
+on_ft = ['slim']
+
+[[plugins]]
+repo= 'rodrigore/coc-tailwind-intellisense'
+on_ft = ['vue', 'html']
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html', 'vue']
+
+[[plugins]]
+repo = 'jackMort/ChatGPT.nvim'
+on_cmd = 'ChatGPT'
+depends = ['MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim']
+lua_post_source = '''
+require('chatgpt').setup()
+'''
